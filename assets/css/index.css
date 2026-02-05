@@ -1,0 +1,319 @@
+
+:root {
+  --bg: #eae2d7;
+  --fg: #5e3d1c;
+  --txt: #2b0a09;
+  --acnt-a: #665340;
+  --acnt-b: #b8aca2;
+  --acnt-c: #b57843;
+  --acnt-d: #e1dad2;
+  --acnt-e: #eae2d7;
+  --acnt-f: #f0ae4e;
+  --main: #665340;
+  --bd: #6f4e2d;
+  --clr: #00000000;
+  --width: 90vw;
+  --width-b: 100vw;
+}
+
+@font-face {
+  src: url(./../fonts/);
+  font-family: ;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: unset;
+  border: unset;
+  outline: unset;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  user-select: none;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  overflow: hidden;
+  background: var(--acnt-f);
+}
+
+.header-area {
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  height: 12em;
+  background: var(--clr);
+  z-index: 6;
+  position: absolute;
+  gap: 1.5em;
+  display: none;
+}
+
+header {
+  padding: 2em;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3em;
+  background: var(--acnt-d);
+  display: flex;
+}
+
+.header-curve {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3em;
+  background: #ff00ff;
+  background: var(--acnt-e);
+  mask-image: radial-gradient(ellipse farthest-corner at bottom, transparent 49%,  white 50%);
+  transform: scale(200%);
+  position: absolute;
+  background: var(--acnt-d);
+}
+
+.header-box-shadow {
+  box-shadow: var(--acnt-f) 0 0 5em 2em;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.menu {
+  position: absolute;
+  width: 4em;
+  height: 4em;
+  border: 2px solid var(--acnt-b);
+  left: calc(50% - 2em);
+  top: 1em;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  box-shadow: var(--acnt-b) 0 0 1em .2em, inset -.2em -.2em 2em var(--bg);
+  transition: 1s;
+  cursor: pointer;
+  z-index: 9;
+  background: var(--acnt-b);
+}
+
+.menu:hover {
+  box-shadow: var(--bg) 0 0 .2em .2em, inset -.2em -.2em 1em var(--acnt-f);
+}
+
+.menu-div {
+  width: 60%;
+  height: .2em;
+  border: 2px solid var(--acnt-c);
+  border-radius: 50%;
+  transition: .2s;
+  transition-timing-function: ease-out;
+}
+
+.menu-div:nth-child(1) {
+  border: 2px solid var(--acnt-d);
+  width: 30%;
+}
+
+.menu-div:nth-child(3) {
+  border: 2px solid var(--acnt-d);
+  width: 30%;
+}
+
+.menu-panel {
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 0;
+  z-index: 7;
+  background: var(--acnt-e);
+  position: absolute;
+  transition: .2s;
+  opacity: 0;
+}
+
+.curve-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--clr);
+  top: 0;
+  width: 100%;
+  height: 3em;
+  position: relative;
+  /*box-shadow: #00ffff 0 0 5em 1em;*/
+  /*box-shadow: inset -.2em -.2em 2em var(--acnt-c);*/
+}
+
+.outer-field {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(var(--acnt-e), var(--acnt-b));
+  z-index: 0;
+  overflow: hidden;
+}
+
+.footer-curve {
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  bottom: -50em;
+  height: 100em;
+  background: var(--acnt-f);
+  background: var(--acnt-d);
+  box-shadow: inset var(--acnt-d) 0 0 1em 1em;
+  box-shadow: var(--bd) 0 0 .5em .1em, inset -.2em -.2em 1em var(--acnt-d);
+  border: 2px solid var(--acnt-d);
+  width: 100%;
+  z-index: 3;
+  display: none;
+}
+
+.inner-field {
+  z-index: 5;
+  width: 98%;
+  top: 15%;
+  left: 1%;
+  height: 70%;
+  position: absolute;
+  /*clip-path: polygon(95% 100%, 100% 0%, 0 0, 5% 100%);*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: var(--acnt-b);
+  backdrop-filter: blur(2px);
+  box-shadow: var(--acnt-f) 0 0 2em .2em, inset -.2em -.2em 2em var(--acnt-f);
+  /*border-radius: 10% 10% 10% 10%;*/
+  border-radius: 50%;
+}
+
+.main-area {
+  width: var(--width);
+  height: var(--width);
+  border: 2px solid var(--acnt-c);
+  box-shadow: var(--acnt-c) 0 0 1em .2em;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  padding: 1em;
+  background: var(--acnt-b);
+  border-radius: 50%;
+  overflow: hidden;
+  transition: .4s;
+  transition-timing-function: ease;
+  position: relative;
+}
+
+.main-area-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--clr);
+}
+
+.main-area-div-mid {
+  width: 15em;
+  height: 15em;
+  position: absolute;
+  align-self: center;
+  justify-self: center;
+}
+
+.main-area-input {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+  background: var(--acnt-d);
+  transition: .7s;
+  border: .2em outset var(--acnt-e);
+  box-shadow: -.1em -.1em .5em var(--acnt-f), inset -.1em -.1em 1em var(--acnt-f);
+  z-index: 1;
+}
+
+.main-area-well {
+  display: flex;
+  position: absolute;
+  background: var(--bd);
+  background: var(--acnt-d);
+  width: 100%;
+  height: 100%;
+  transition: .4s;
+  background: radial-gradient(var(--acnt-d), var(--acnt-a));
+  box-shadow: inset -.2em -.2em 2em var(--acnt-c);
+}
+
+.well-shader {
+  display: flex;
+  position: absolute;
+  background: #6a7fef;
+  width: 100%;
+  height: 0;
+  transition: .4s;
+  bottom: 0;
+
+}
+
+.rotator {
+  border: 2px solid var(--acnt-c);
+  width: 9em;
+  height: 9em;
+  border-radius: 50%;
+  border: .2em outset var(--acnt-e);
+  box-shadow: -.1em -.1em .5em var(--acnt-f), inset -.1em -.1em 1em var(--acnt-f);
+  transition: .7s;
+  cursor: pointer;
+  z-index: 1;
+}
+
+@keyframes osc {
+  0% {
+    width: calc(var(--width-b));
+  }
+
+  50% {
+    width: calc(var(--width-b) - 2em);
+    left: calc(50% - var(--width-b) / 2 + 1em);
+  }
+
+  100% {
+  }
+
+  0% {
+  }
+}
+
+.field-shader {
+  width: calc(var(--width-b));
+  height: calc(var(--width-b) + 10em);
+  background: var(--acnt-d);
+  background: var(--acnt-b);
+  transform: scale(95%);
+  z-index: 5;
+  position: absolute;
+  top: 10em;
+  left: calc(50% - var(--width-b) / 2);
+  border-radius: 2%;
+  border-radius: 30%;
+  box-shadow: -.1em -.1em 2em var(--acnt-f), inset -.1em -.1em 2em var(--acnt-f);
+  animation-name: osc;
+  animation-timing-function: ease;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
